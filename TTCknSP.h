@@ -40,7 +40,7 @@ public:
         // auto& k = this->k;
         auto& t = gq.threshold;
 
-        std::chrono::high_resolution_clock::time_point t1; // 高精度时钟
+        std::chrono::high_resolution_clock::time_point t1; 
         std::chrono::high_resolution_clock::time_point t2;
         std::chrono::duration<double> time_span;
 
@@ -121,8 +121,6 @@ public:
         vvmArc.push_back(mmArc);
         vvmPathNodePos.push_back(mmPos);
 
-        //  这边存位置注意原本是反向存fixed part，reverse成了正向存，然后存了正向的的位置，所以这里直接正向存
-        //  unordered_map(): 存储元素时没有顺序，使用[]操作符来访问key值对应的value值
         /*unordered_map<int, int> mPos;
         for(int i = 0; i < (int)vPath.size(); i++) // Store the positions of all nodes in vPath sequentially
             mPos[vPath[i]] = i;
@@ -198,11 +196,9 @@ public:
                         //                  countNonAncestor += 1;
                         for (auto ie = vvPathCandidateEdge[topPathID].begin();
                             ie != vvPathCandidateEdge[topPathID].end(); ie++) {
-                            // 算的是vvPathCandidateEdge[topPathID]这条path，和pResult[i]这条path的，所有相交的边的length之和
                             if (pResult[i].find(*ie) != pResult[i].end())
                                 addLength += vEdge[*ie].length;
                         }
-                        // kResults里面一直保持着当前的top-k条path，所以每枚举出一条新的path，就要和当前的top-k条path算相似度
                         //Sim 1: Jaccard Similarity
                         //sim = addLength / (kResults[i] + topPathDistance - addLength);
 
@@ -709,10 +705,7 @@ public:
             }
             size_t nt = gq.curPath->fpr.vTime.size();
 
-            // Original idea: only when the new update time is within the time range of moving at this sub-path, we need to recompute the sub-path.
-            // otherwise, the current sub-path still has to be completed (X)
-
-            // Current idea: if the speed profile update is triggered, and the new update time is within the time range of moving at this sub-path,
+            // Idea: if the speed profile update is triggered, and the new update time is within the time range of moving at this sub-path,
             // the current sub-path still has to be completed.
             // Meanwhile, all the weights of subsequent candidate paths of unfinished queries need to be re-computed.
             int queuesize = Ef.size();
