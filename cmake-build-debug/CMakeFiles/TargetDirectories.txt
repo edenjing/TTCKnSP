@@ -1,0 +1,3 @@
+/Users/eden/CLionProjects/TTCK-Final/cmake-build-debug/CMakeFiles/TTCK_Final.dir
+/Users/eden/CLionProjects/TTCK-Final/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/eden/CLionProjects/TTCK-Final/cmake-build-debug/CMakeFiles/rebuild_cache.dir
