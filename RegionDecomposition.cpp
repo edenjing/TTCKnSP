@@ -218,65 +218,7 @@ void Graph::coveredGrids(double x1, double y1, double x2, double y2, double cons
     {
         currentGrid = gridQ.front();
         gridQ.pop();
-        int currentLevel = currentGrid.first; // level
-//        if(currentLevel + 1 < level)
-//        {
-//            int gridX = currentGrid.second.first;
-//            int gridY = currentGrid.second.second;
-//            double xBase = vpXYBase[currentLevel+1].first;
-//            double yBase = vpXYBase[currentLevel+1].second;
-//            for(int j = 0; j < 2; j++)
-//            {
-//                for(int k = 0; k < 2; k++)
-//                {
-//                    if(vvvCoherence[currentLevel+1][gridX*2 + j][gridY*2 + k].second == 0)
-//                        continue;
-//                    pair<double, double> SW = make_pair(minX + (gridX*2 + j)*xBase, minY + (gridY*2 + k)*yBase);
-//                    pair<double, double> SE = make_pair(minX + (gridX*2 + (j+1))*xBase, minY + (gridY*2 + k)*yBase);
-//                    pair<double, double> NW = make_pair(minX + (gridX*2 + (j+1))*xBase, minY + (gridY*2 + (k+1))*yBase);
-//                    pair<double, double> NE = make_pair(minX + (gridX*2 + j)*xBase, minY + (gridY*2 + (k+1))*yBase);
-//
-//                    vector<pair<double, double> > vpP;
-//                    vector<pair<double, double> >::iterator ivpP;
-//                    vpP.push_back(SW);
-//                    vpP.push_back(SE);
-//                    vpP.push_back(NW);
-//                    vpP.push_back(NE);
-//
-//                    int pCount = 0;
-//                    for(ivpP = vpP.begin(); ivpP != vpP.end(); ivpP++)
-//                    {
-//                        impB = mpB.find(*ivpP);
-//                        if(impB != mpB.end())
-//                        {
-//                            if((*impB).second)
-//                                pCount++;
-//                        }
-//                        else
-//                        {
-//                            int dp = Eucli((*ivpP).first, (*ivpP).second, x1, y1) + Eucli((*ivpP).first, (*ivpP).second, x2, y2);
-//                            if(dp <= constDist)
-//                            {
-//                                mpB[*ivpP] = true;
-//                                pCount++;
-//                            }
-//                            else
-//                                mpB[*ivpP] = false;
-//                        }
-//
-//                        //fully covered, add all grids
-//                        if(pCount == 4)
-//                        {
-//                            addAllChildren(currentLevel+1, 2*gridX+j, 2*gridY+k, sGrids);
-//                        }
-//                        else if(pCount > 0) //Partially covered, push to queue
-//                            gridQ.push(make_pair(currentLevel+1, make_pair(2*gridX+j, 2*gridY+k)));
-//                    }
-//                }
-//            }
-//        }
-//        else
-//        {
+//         int currentLevel = currentGrid.first; // level
         int gridX = currentGrid.first;
         int gridY = currentGrid.second;
 //			addAllChildren(currentLevel+1, 2*gridX, 2*gridY, sGrids);
