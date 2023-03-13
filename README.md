@@ -17,8 +17,8 @@ A test dataset is stored in the folder TTCKnSP/cmake-build-debug/data/:
 
 
 Please run main.cpp to watch the test result. The running result shows the following information:  
-a). the preparation process of top-k^n paths within layers;
+1. the preparation process of top-k^n paths within layers;
 
-b). the final path concateantion for all queries under the region-based speed profile update;
+2. the final path concateantion for all queries under the region-based speed profile update;
 
-c). the shortest path error compared to the result performed on the ground truth speed profile.
+3. the shortest path error compared to the result performed on the ground truth speed profile.
