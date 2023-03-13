@@ -3,7 +3,7 @@
 Travel Time Constrained Top-k^n Shortest Path Algorithm is stored in TTCknSP.h:
 1. eTDKSPCompare function performs the k^n paths preparation for queries;
 
-2. selectResult function performs the continuous routing process for queries;
+2. selectResult function performs the continuous routing process for queries.
 
 
 A test dataset is stored in the folder TTCKnSP/cmake-build-debug/data/:
