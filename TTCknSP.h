@@ -792,9 +792,3 @@ public:
         return AllEdges;
     }
 };
-
-
-
-//int Graph::eTDKSPCompare(int ID1, int ID2, int DPT, int k, vector<int>& kResults, vector<vector<int>>& vkPathNode,
-//    vector<vector<int>>& vkPathEdge, vector<vector<int>>& vkPathTime, double t, int& countNumber, int& popPath, float& SimTime);
-
